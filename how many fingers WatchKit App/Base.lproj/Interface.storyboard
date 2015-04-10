@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="how_many_fingers_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <slider width="1" alignment="left" value="0.59999999999999998" steps="5" id="DZf-cz-JYY">
+                            <connections>
+                                <action selector="guessUpdated:" destination="AgC-eL-Hgc" id="ok5-AS-scx"/>
+                            </connections>
+                        </slider>
+                        <label width="132" alignment="left" text="Your guess : 3" textAlignment="center" id="vdH-tk-D4G"/>
+                        <button width="1" alignment="left" title="Guess!" id="OJc-bU-bdy">
+                            <color key="backgroundColor" red="0.63238260749999997" green="0.97357696189999998" blue="0.9968434343" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="guessPressed" destination="AgC-eL-Hgc" id="qYb-Z8-nyN"/>
+                            </connections>
+                        </button>
+                        <label width="136" alignment="left" text="Label" textAlignment="center" id="Mwo-Z0-ulK"/>
+                    </items>
+                    <connections>
+                        <outlet property="guess" destination="DZf-cz-JYY" id="Rok-XE-jwf"/>
+                        <outlet property="guessLabel" destination="vdH-tk-D4G" id="8Z4-DW-Xhb"/>
+                        <outlet property="resultLabel" destination="Mwo-Z0-ulK" id="l1Q-80-Aao"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="how_many_fingers_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
